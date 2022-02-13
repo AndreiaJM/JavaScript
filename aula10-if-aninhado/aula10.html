@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If aninhado</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*condicional aninhada*/
+
+        var nota = prompt('Digite a sua nota', 'nota aqui')
+        var aprov;
+
+        if(nota>80){
+            aprov = 'aprovado '
+            if(nota == 100){
+                aprov += 'com excelencia '
+            } else {
+                aprov += 'com louvor '
+            }
+        }else if (nota>=50){
+            aprov = 'em recuperação '
+        }else{
+            aprov = 'reprovado '
+            if(nota <30){
+                aprov += ' com louvor'
+            }
+        }
+    
+
+        document.write(`${aprov}`)
+
+    </script>
+
+</body>
+
+</html>
