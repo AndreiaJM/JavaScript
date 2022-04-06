@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando-formularios</title>
+</head>
+
+<style>
+    form{
+
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        padding: 10px;
+
+    }
+
+    input{
+        height: 30px;
+    }
+
+
+</style>
+<body>
+
+
+    <form name="curso1" id="curso1" action="#" method="post">
+        <label for="">Nome</label>
+        <input type="text" name="fnome" id="teste" value="primeiro-1">
+        <label for="">Senha</label>
+        <input type="submit" name="btEnviar" value="Enviar">
+        
+
+    </form>
+
+    
+
+    
+
+    <hr>
+
+    <script>
+
+        /*
+
+        Mostra quantos formularios há, ou o formulario definido na posição do array
+
+        var fm = document.forms.length
+        document.write(fm)*/
+
+        /*var teste1 = document.forms[0].id
+        document.write(teste1 +"<br>")
+
+        var teste2 = document.forms.item(1).id
+        document.write(teste2)*/
+
+
+        /*retorna o formulario todo
+        var teste3 = document.forms[0].innerHTML
+
+        document.write(teste3)*/
+
+        /*valor na label não é considerado elemento no array*/
+
+        var fm = document.forms[0]; /*pegando formulario*/
+        var el = fm.elements;/*pegando elemento*/
+
+        el[1].style.background="pink"
+        el[1].style.background='pink'
+
+        for(var i=0;i<el.length;i++){
+            el[i].style.fontSize='30px'
+            el[i].style.color="blue"
+            el[i].value="alterado"
+        }
+
+        var teste5= document.getElementById("curso1").elements[0].value
+
+        document.write(teste5)
+
+
+
+
+    </script>
+    
+
+    <hr>
+</body>
+</html>

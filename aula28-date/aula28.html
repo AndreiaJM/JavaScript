@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando datas</title>
+</head>
+<body>
+
+
+    <script>
+
+    var meses=["janeiro","fevereiro","março","abril","maio","junho","julho","agosta","setembro","outubro","novembro","dezembro",]/*
+
+    var semana= ["dom","seg","ter","qua","qui","sex","sab",]*/
+
+    var ordem = new Date /*ano, mes, dia, horas, minutos, seg, mil*/
+        
+
+        var dd = new Date;
+        var sem = dd.getDay()
+        var mes =dd.getMonth()
+        var ano = dd.getFullYear()
+
+        dd.setDate(dd.getDate()+2)
+
+        var data = dd.getDate();
+
+        
+
+
+        document.write(` hoje é ${data} de ${meses[mes]}`)
+
+        
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

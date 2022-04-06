@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings parte 3</title>
+</head>
+<body>
+
+    <p id="texto">estou estudando javascript na cfb cursos. O Javascript não é tão dificil</p>
+
+
+
+    <script>
+        /*
+
+        pesquise a primeira posição de um determinado caracter.
+        pesquise a ultima posição de um determinado caracter.
+        comprare duas string e diga se são iguais ou diferentes.
+        corte determinada string.
+        transforme cada palavra de um elemento em um index do array. 
+        use o metodo que determina a posição inicial e quantas strings seram cortadas.
+        Passe o texto inteiro para maiusculo.
+        Passe o texto inteiro para minusculo.
+
+
+        indexOf() = posição do primeiro caracter
+        lastIndexOf = posição do ultimo caracter
+
+        localeCompare()=compara as  strings, se forem iguais retona 0, se forem diferentes retona 1
+
+        slice(posição inicial,posição final ) = corta a string em um local especifico
+
+        split()= cada palavra vira um index do array
+
+        substr(posição inicial, quantos caracter sera cortado)=
+
+        toLowerCase() = converte para minusculo
+
+        toUpperCase()=converte para maiusculo
+       */
+
+        var obj = document.getElementById("texto").innerHTML
+        var texto2=obj;
+
+        var busca1 = obj.indexOf("u")
+
+        var busca2 = obj.lastIndexOf("j")
+
+        var busca3 = obj.localeCompare(texto2)
+
+        var busca4 = obj.slice(14,22)
+
+        var busca5 = obj.split(" ")
+
+        var busca6 = obj.substr(3,11)
+
+        var busca7 = obj.toLocaleLowerCase()
+
+        var busca8 = obj.toLocaleUpperCase()
+
+        var busca9 = obj.toLocaleLowerCase().substr(3,20)
+
+
+        document.write(busca1+"<br>")
+        document.write(busca2+"<br>")
+
+        document.write(busca3+"<br>")
+
+        document.write(busca4+"<br>")
+
+        document.write(busca5[8]+"<br>")
+
+        document.write(busca6+"<br>")
+
+        document.write(busca7+"<br>")
+
+        document.write(busca8+"<br>")
+
+        document.write(busca9+"<br>")
+
+        
+
+
+        
+        
+
+    </script>
+    
+</body>
+</html>

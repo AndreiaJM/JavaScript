@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide-moderno</title>
+</head>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 1400px;
+            height: 300px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button{
+            cursor: pointer;
+            height: 30%;
+            background: rgba(0, 0, 0, 0.4);
+            outline: none;
+            border: none;
+            margin: 10px;
+
+        }
+
+        #barra{
+            width: 100%;
+            height: 5px;
+            margin-top: 25%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+
+        #barrinha{
+            width: 0%;
+            height: 100%;
+            background-color: #fff ;
+
+        }
+    </style>
+    
+
+
+    <script>
+        var imgs=[];
+        var slider;
+        var imgAtual;
+        var maxImg;
+        var tmp;
+        var tempotroca;
+        var vtempo;
+        var vload;
+
+        /*Pré carregamento da imagem */
+        function preCarregamento(){
+            
+            var s=1
+            for(var i=0;i<5;i++){
+            imgs[i]= new Image();
+            imgs[i].src="img/s"+s+".jpg"
+            s++
+        }
+        }
+        /*carregando a imagem no background da div*/
+        function carregarImg(img){
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
+        }
+        //Função para iniciar as outras funções
+        function inicia(){
+            preCarregamento();
+            imgAtual=0
+            maxImg=imgs.length-1;
+            slider = document.getElementById("div1")
+            vbarra = document.getElementById("barrinha")
+            carregarImg(imgAtual)
+            //Passar imagens automaticamente
+            tempotroca = 0
+            anima()
+        }
+        function troca(dir){
+            tempotroca = 0;
+            imgAtual+=dir
+            if(imgAtual>maxImg){
+                imgAtual=0;
+            }else if(imgAtual<0){
+                imgAtual=maxImg;
+            }
+            carregarImg(imgAtual);
+        }
+        function anima(){
+            tempotroca++
+            if(tempotroca>=500){
+                tempotroca=0
+                troca(1)
+            }
+            vtempo=tempotroca/5
+            vbarra.style.width=vtempo+"%"
+            window.requestAnimationFrame(anima)
+        }
+        window.addEventListener("load",inicia)
+
+    </script>
+<body>
+
+    <div id="div1">
+        <button onclick="troca(-1)" id="btn1"> < </button>
+        <div id="barra">
+            <div id="barrinha"></div>
+        </div>
+        <button onclick="troca(1)" id="btn2"> > </button>
+    </div>
+</body>
+</html>

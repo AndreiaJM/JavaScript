@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window</title>
+
+    <script>
+
+        var minhaJanela;
+
+    function abreJanela(){
+
+    minhaJanela =  window.open("./tmp.html","target_blank", "width=300, height=300, top=300, left=300" ) 
+
+    /*var minhaJanela =  window.open("./tmp.html","cfb") abrir dentro do iframe*/
+    }
+
+    function fecharJanela(){
+
+    minhaJanela.close();
+
+
+}
+
+
+
+    </script>
+</head>
+<body>
+
+        <button onclick="abreJanela()">Abre nova janela</button>
+        <button onclick="fecharJanela()">Abre nova janela</button>
+
+        <iframe name="cfb" src="" ></iframe>
+    
+</body>
+</html>

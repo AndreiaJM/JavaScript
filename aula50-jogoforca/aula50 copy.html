@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+
+    <style>
+        #container{
+            
+            display: flex;
+        }
+
+        #forca{
+            height: 600px;
+            
+        }
+
+        #cabeca,#bracoD,#bracoE,#pernaD,#pernaE{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        #cabeca{
+            top: 250px;
+            left: 220px;
+        }
+        #corpo{
+            height: 150px;
+            position: absolute;
+            top: 345px;
+            left: 265px;
+        }
+        #bracoD{
+            top: 345px;
+            left: 265px;
+        }
+        #bracoE{
+            top: 345px;
+            left: 170px;
+        }
+        #pernaD{
+            top: 490px;
+            left: 265px;
+        }
+        #pernaE{
+            top: 490px;
+            left: 170px;
+        }
+
+        #divposi{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        
+        }
+
+        .letra{
+            width: 50px;
+            height: 70px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 60px;
+            text-align: center;
+            border: 2px solid black;
+            
+        }
+
+        #controleJogador{
+            width: 200px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        #letraJ{
+            width: 70%;
+            height: 60%;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="forca" src="./boneco/forca.png" alt="">
+
+        <div>
+            <img id="cabeca" src="./boneco/cabeca1.png"alt="">
+            <img id="corpo" src="./boneco/corpo.png" alt="">
+            <img id="bracoD" src="./boneco/bracoD.png" alt="">
+            <img id="bracoE" src="./boneco/bracoE.png" alt="">
+            <img id="pernaD" src="./boneco/pernaD.png" alt="">
+            <img id="pernaE" src="./boneco/pernaE.png" alt="">
+        </div>
+
+        <div>
+            <div id="divposi">
+                <input type="text" id="letra1" class="letra" maxlength="1">
+                <input type="text" id="letra2" class="letra" maxlength="1">
+                <input type="text" id="letra3" class="letra" maxlength="1">
+                <input type="text" id="letra4" class="letra" maxlength="1">
+                <input type="text" id="letra5" class="letra" maxlength="1">
+                <input type="text" id="letra6" class="letra" maxlength="1">
+                <input type="text" id="letra7" class="letra" maxlength="1">
+                <input type="text" id="letra8" class="letra" maxlength="1">
+                <input type="text" id="letra9" class="letra" maxlength="1">
+                <input type="text" id="letra10" class="letra" maxlength="1">
+                <input type="text" id="letra11" class="letra" maxlength="1">
+                <input type="text" id="letra12" class="letra" maxlength="1">
+                <input type="text" id="letra13" class="letra" maxlength="1">
+                <input type="text" id="letra14" class="letra" maxlength="1">
+                <input type="text" id="letra15" class="letra" maxlength="1">
+                <input type="text" id="letra16" class="letra" maxlength="1">
+                <input type="text" id="letra17" class="letra" maxlength="1">
+                <input type="text" id="letra18" class="letra" maxlength="1">
+                <input type="text" id="letra19" class="letra" maxlength="1">
+                <input type="text" id="letra20" class="letra" maxlength="1">
+
+                
+                    <div id="controleJogador">
+                        <input type="text" id="letraJ" class="letraJ" maxlength="1">
+                        <div>
+                        <button onclick="jogar()" class="botao">Jogar</button>
+                        <button class="botao">Dica</button>
+                        </div>
+                        <button onclick="inicia()">Nova Palavra</button>
+                        <div id="msg">Perdeu</div>
+                        <div id="letrasdigitadas">Letras digitadas</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script>
+            var papelaria=["lapis","borracha","caneta","caderno","livro","lapiseira","canetinha","regua","estojo","marcador","sulfite"]
+
+            var qtd = papelaria.length-1
+            var sort = Math.round(Math.random()*qtd)
+            var palavra = papelaria[sort]
+            var tam = palavra.length;
+            var cxLetras=[];
+            var acertos;
+            var errosMax=7;
+            var erros=0;
+            var desenhos=[];
+            var acertou =false;
+            var jogando =false;
+            var jog;
+
+            function jogar(){
+                jog=document.getElementById("letraJ")
+                jog.focus();
+
+                if(jog.value=""){
+                    alert("Digite uma letra")
+                }else{
+                    if(jogando){
+                        var obj;
+                        var letraTmp;
+                        var letra;
+                        var pesq;
+                        letra=jog.value;
+                        jog.value=""
+                        pesq=palavra.math(letra);
+                        acertou=false;
+                        while(pesq!=null){
+                            letraTmp=palavra.search(letra)
+                            obj=document.getElementById("letra"+letraTmp).value=letra;
+                            palavra=palavra.replace(letra,"0")
+                            acertos++;
+                            pesq=palavra.matchgitadas(letra);
+                            acertou=true;
+                        }
+                        if(!acertou){
+                            document.getElementById("letrasdigitadas").innerHTML+=letra.toUpperCase()
+                            erros++
+                            if(erros<7){
+                                desenhos[erros].style.display="block"
+                            }else{
+                                document.getElementById("cabeca").src="./boneco/cabeca2.png";
+                                document.getElementById("msg").innerHTML="Perde";
+                                jogando=false;
+                            }
+                        }
+
+                        if(acertos==tam){
+                            document.getElementById("msg").innerHTML="";
+                            document.getElementById("msg").innerHTML="GANHOU"
+                        }
+                    }
+                }
+            }
+
+            function defineletras(l){
+                var obj;
+                for(var i=0;i<20;i++){
+                    obj=document.getElementById("letra"+i).value="";
+                    obj=document.getElementById("letra"+i).style.display="none";
+                }
+                for(var i=0;i<l;i++){
+                    obj=document.getElementById("letra"+i).style.display="inline-block";
+                }
+            }
+
+            function inicia(){
+                jogando =true;
+                jog=document.getElementById("letraJ")
+                jog.value="";
+                jog.focus();
+                acertos=0;
+                erros=0;
+                acertou=false;
+                document.getElementById("letrasdigitadas").innerHTML="Letras digitadas"
+                sort = Math.round(Math.random()*qtd)
+                palavra = papelaria[sort]
+                tam = palavra.length;
+                defineletras(tam);
+                document.getElementById("msg").innerHTML="";
+                desenhos[1]=document.getElementById("cabeca1")
+                desenhos[2]=document.getElementById("corpo")
+                desenhos[3]=document.getElementById("bracoD")
+                desenhos[4]=document.getElementById("bracoE")
+                desenhos[5]=document.getElementById("pernaD")
+                desenhos[6]=document.getElementById("pernaE")
+                document.getElementById("cabeca").src="./boneco/cabeca1.png"
+
+                for(var i=0;i<7;i++){
+                    desenhos[i].style.display="none"
+                }
+            }
+
+            
+
+            window.addEventListener("load",inicia)
+
+        </script>
+</body>
+</html>

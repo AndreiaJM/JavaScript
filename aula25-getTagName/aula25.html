@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName</title>
+</head>
+<body>
+
+    
+
+    <p> posição 1</p>
+
+    <h3> posição 1</h3>
+
+    <p> posição 2</p>
+
+    <h3> posição 2</h3>
+
+    <p> posição 3</p>
+
+    <h3> posição 3</h3>
+
+    <p> posição 4</p>
+
+    <h3> posição 4</h3>
+
+    <p>........................................</p>
+
+
+    <script>
+
+        /*a tag getElementsByTagName pega todas as tags que tenham o nome selecionado e guarda em um array, lembrando que array começa com a posição 0.
+
+        o asterisco * captura todas tags e forma o array com estas, inclusive as tags de header
+
+        hs[i].style altera do css
+        
+         */
+
+    var ps = document.getElementsByTagName("p")
+
+    var hs = document.getElementsByTagName("h3")
+
+    /*for para alterar a cor de todo o array de h3*/
+    for(var i=0;i<hs.length;i++){
+        hs[i].style.color='red' 
+    }
+    
+
+    document.write(hs[1].innerHTML='novo texto')
+
+
+    </script>
+    
+</body>
+</html>

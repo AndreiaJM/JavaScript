@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+</head>
+
+<style>
+
+    h1 {
+        text-align: center;
+    }
+
+    #divposi {
+        width: 800px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .letra {
+        width: 50px;
+        height: 70px;
+        margin: 10px;
+        padding: 10px;
+        font-size: 50px;
+        text-align: center;
+        border: 3px solid black;
+    }
+
+    #boneco{
+        width: 50px;
+        height: 70px;
+        border: 3px solid black;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+
+    #letraJ{
+        width: 100px;
+        height: 70px;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+    <h1>Jogo da forca</h1>
+
+    <div id="inicia()" class="dvdisplay">
+        <button>Nova palavra</button>
+    </div>
+
+    <div id="container">
+
+        <div id="divposi">
+            <input type="text" id="letra1" class="letra" maxlength="1">
+            <input type="text" id="letra2" class="letra" maxlength="1">
+            <input type="text" id="letra3" class="letra" maxlength="1">
+            <input type="text" id="letra4" class="letra" maxlength="1">
+            <input type="text" id="letra5" class="letra" maxlength="1">
+            <input type="text" id="letra6" class="letra" maxlength="1">
+            <input type="text" id="letra7" class="letra" maxlength="1">
+            <input type="text" id="letra8" class="letra" maxlength="1">
+            <input type="text" id="letra9" class="letra" maxlength="1">
+            <input type="text" id="letra10" class="letra" maxlength="1">
+            <input type="text" id="letra11" class="letra" maxlength="1">
+            <input type="text" id="letra12" class="letra" maxlength="1">
+            <input type="text" id="letra13" class="letra" maxlength="1">
+            <input type="text" id="letra14" class="letra" maxlength="1">
+            <input type="text" id="letra15" class="letra" maxlength="1">
+            <input type="text" id="letra16" class="letra" maxlength="1">
+            <input type="text" id="letra17" class="letra" maxlength="1">
+            <input type="text" id="letra18" class="letra" maxlength="1">
+            <input type="text" id="letra19" class="letra" maxlength="1">
+            <input type="text" id="letra20" class="letra" maxlength="1">
+        </div>
+        <div id="jogador">
+
+            <div id="boneco">
+                <img src="./boneco/cabeca1.png" alt="">
+                <img src="./boneco/corpo.png" alt="">
+                <img src="./boneco/bracoE.png" alt="">
+                <img src="./boneco/bracoD.png" alt="">
+                <img src="./boneco/pernaD.png" alt="">
+                <img src="./boneco/pernaE.png" alt="">
+            </div>
+
+            <div id="controleJogador">
+                <input type="text" id="letraJ" class="letraJ" maxlength="1">
+                <button>Jogar</button>
+                <button>Dica</button>
+                <div>Perdeu</div>
+                <div>Letras digitadas</div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

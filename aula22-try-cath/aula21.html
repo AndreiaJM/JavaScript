@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>erros</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        Bloco try captura o erro e manda para o cath
+
+        throw new Error personaliza a mensagem de erro ja esperada caso determinada ação ocorra
+        
+        Bloco cath pode imprimir o erro no document ou console
+        
+        */
+
+
+        var num; //maximo 10
+        try{
+
+            num = prompt("Digite um valor: ")
+            document.write("Valor: "+num+ "<br>")
+            if(num>10){
+                throw new Error ("Valor inválido")
+            }
+        }catch(e){
+
+            document.write(e.message)
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

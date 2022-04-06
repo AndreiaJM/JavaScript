@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String parte 2</title>
+</head>
+<body>
+
+
+    <p id="texto">estou estudando javascript na cfb cursos. O Javascript não é tão dificil</p>
+
+    <script>
+
+        /*
+        Search = não retona array, retorna a posição que começa a string, não adianta colocar o g
+
+        Replace = substitui determinado caracter dentro da string
+
+        chatAt = retorna a posição que foi indicada no parametro do metodo
+
+        chatCodeAt = retorna o codigo do caracter
+
+        String.fromCharCode()=passa um codigo de caracter para sua letra
+
+        Busque a posição de determinada palavra.
+        Substitua uma palavra por outra
+        Busque por uma posição.
+        Substitua todas as mesma palavras por outra.
+        Busque o codigo de determinada letra.
+        Busque determinada letra pelo seu codigo
+        Junte duas strings do texto
+        */
+
+        var obj = document.getElementById("texto").innerHTML;
+
+        var busca1 = obj.search(/estudando/i)
+
+        var busca2 = obj.replace(/estou/i,"eu")
+
+        var busca4 = obj.charAt(2)
+
+        var busca3 = obj.replace(/javascript/ig,"css")
+
+        var busca5 = obj.charCodeAt(2)
+
+        var busca7 = obj.concat(" estudando muito ")
+
+        var teste = " testando o uso"
+
+        var busca8 = obj.concat(teste)
+
+        document.write(busca1+"<br>")
+
+        document.write(busca2+"<br>")
+
+        document.write(busca3+"<br>")
+
+        document.write(busca4+"<br>")
+
+        document.write(busca5+"<br>")
+
+        document.write(String.fromCharCode(busca5))
+
+        document.write(busca7)
+
+        document.write(busca8)
+
+
+
+
+    </script>
+    
+</body>
+</html>

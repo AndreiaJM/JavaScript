@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+</head>
+
+    <style>
+        div{
+            width: 1000px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+    
+
+
+    <script>
+
+        
+
+        var imgs=[];
+        var slider;
+        var imgAtual;
+        var maxImg;
+        var tmp;
+
+        /*Pré carregamento da imagem */
+        function preCarregamento(){
+            
+            var s=1
+            for(var i=0;i<5;i++){
+            imgs[i]= new Image();
+            imgs[i].src="img/s"+s+".jpg"
+            s++
+        }
+        }
+
+
+        /*carregando a imagem no background da div*/
+        function carregarImg(img){
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
+        }
+        //Função para iniciar as outras funções
+        function inicia(){
+            preCarregamento();
+            imgAtual=0
+            maxImg=imgs.length-1;
+            slider = document.getElementById("div1")
+            carregarImg(imgAtual)
+            //Passar imagens automaticamente
+            tmp=setInterval(troca,3000)
+            //Passar slides com botão
+            var b = document.getElementById("button")
+            b.addEventListener("click",troca)
+        }
+
+        function troca(){
+            imgAtual++
+            if(imgAtual>maxImg){
+                imgAtual=0;
+            }
+            carregarImg(imgAtual);
+        }
+
+        window.addEventListener("load",inicia)
+
+    </script>
+
+
+<body>
+
+    <div id="div1"></div>
+    <button id="button">Prossimo</button>
+    
+</body>
+</html>

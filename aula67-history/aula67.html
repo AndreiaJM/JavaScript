@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+
+    <script>
+
+        var painel,btnB, btnF, btnGo;
+
+        function hB(){
+            window.history.back(); /*voltar 1 pagina do historico*/
+        }
+
+        function hF(){
+            window.history.forward();/*avançar 1 pagina do historico*/
+        }
+
+        function hg(){
+            window.history.go(-2);/*avançar ou voltar mais que uma pagina historico*/
+        }
+
+        function inicia(){
+
+        btnB=document.getElementById("btnBack")
+        btnF=document.getElementById("btnForward")
+        btnGo=document.getElementById("btnBack2")
+
+        btnB.addEventListener('click', hB)
+        btnF.addEventListener('click', hF)
+        btnGo.addEventListener('click', hg)
+
+        painel=document.getElementById("info")
+        painel.innerHTML=history.length /*tamanho do historico*/
+
+
+
+        }
+
+
+        window.addEventListener('load',inicia)
+    </script>
+</head>
+<body>
+
+    <h1>Home - aula67.html</h1>
+    <p id="info"></p>
+
+    <a href="aula67.html">Home</a>
+    <a href="./p2.html">Pg2</a>
+    <a href="./p3.html">Pg3</a>
+
+    <button id="btnBack">Voltar</button>
+    <button id="btnForward">Avançar</button>
+    <button id="btnBack2">Voltar2</button>
+
+
+</body>
+</html>

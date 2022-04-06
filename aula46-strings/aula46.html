@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String parte 1</title>
+</head>
+<body>
+
+    <p id="texto">Estou estudando javascript no canal do cfb cursos </p>
+
+    <script>
+
+        /*
+        Buscador i = ignora case
+        buscador g = busca todas strings e não para na primeira
+        buscador m = informa para a string não ser armazenada em forma de array
+
+        .match = busca string e guarda em um vetor
+
+        Metacaracteres fazem buscas especificas como buscar numeros
+
+        Procure uma palavra especifica dentro do html.
+        procure uma string sem verificar o case.
+        determine uma string e procure todas elas.
+        procure por duas strings diferentes.
+        determite duas strings e pesquise por todas exeto elas.
+        pesquise todas as strings entre a e e.
+        pesquise todas as strings menos as que estão entre a e e.
+
+
+        */
+
+        var obj = document.getElementById("texto").innerHTML;
+
+        var busca1 = obj.match("canal")
+
+        var busca2 = obj.match(/Canal/ig)
+
+        var busca3 = obj.match("canal")
+
+        var busca4 = obj.match(/a/g)
+
+        var busca5 = obj.match(/e/ig)
+
+        var busca6 = obj.match(/[aei]/ig)
+
+        var busca7 = obj.match(/[^aei]/ig)
+
+        var busca8 = obj.match(/[a-e]/ig)
+
+        var busca9 = obj.match(/[^a-e]/ig)
+        
+
+        document.write(busca1+"<br>")
+        document.write(busca2+"<br>")
+        document.write(busca3.length+"<br>")
+        document.write(busca4+","+":"+busca4.length+" letters"+"<br>")
+        document.write(busca4[0].length+ " "+busca4[1]+"<br>")
+        document.write(busca5+" "+ busca5.length+"<br>")
+        document.write(busca6+"<br>")
+        document.write(busca7+"<br>")
+        document.write(busca8+"<br>")
+        document.write(busca9)
+
+    </script>
+    
+</body>
+</html>

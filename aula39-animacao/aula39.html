@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação</title>
+
+    <style>
+        #div1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #00f;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+    <script>
+
+        var vel;
+        var px;
+        var py;
+        var dx;
+        var dy;
+        var jog;
+        var anima;
+
+        function iniciar(){
+
+            vel=5;
+            px=0;
+            py=0;
+            dx=1;
+            dy=0;
+
+            jog=document.getElementById("div1")
+
+            
+            
+
+        }
+
+        function game(){
+            px+=dx*vel
+            jog.style.left=px+"px"
+            if(px>500){
+                dx=-1
+                
+            }else if(px<0){
+                dx=1
+            }
+            
+
+            anima=requestAnimationFrame(game)
+        }
+
+        window.addEventListener("load",iniciar)
+
+    </script>
+
+
+</head>
+<body>
+
+
+    <div id="div1"></div>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window</title>
+
+    <style>
+        #painel{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            
+        }
+    </style>
+
+    <script>
+
+        function mudaCor(cor){
+
+            /*Não funciona para o Google Crome*/
+            /*Serve para mudar estilo da pagina pai*/
+            parent.document.body.style.backgroundColor=cor;
+        }
+    
+
+        
+
+    </script>
+</head>
+<body>
+
+    <button onclick="mudaCor('#f00')">Verde</button>
+    <button onclick="mudaCor('#0f0')">Vemelho</button>
+    <button onclick="mudaCor('#00f')">Azul</button>
+    
+    
+</body>
+</html>
