@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <style>
+        body{
+            background-color: #f00;
+            color: #fff;
+        }
+        a{
+            color: #fff;
+        }
+    </style>
+    <script>
+        /*Location e uma extensão do windows que serve para a manipulação da url
+        
+        Possue informações da url ou seja pode ser resgatado informações da url como tambem seta-las
+
+        ? = hash/cerquilha = compões a url com as informações passadas de uma pagina para outra
+        
+        */
+
+        var aux = location.search; /*variavel guarda o valor da hash inserida no href na pagina*/
+
+        document.write(aux) //impressão da hash
+        document.write("<hr>")
+
+        var sp = aux.split("?")
+        var array = sp[1].split("=")[1] //neste caso a posição 1 contem a variavel
+        document.write(array)
+        document.write("<hr>")
+
+        
+
+        
+
+    
+    </script>
+</head>
+<body>
+
+    <h1>P2 - p2.html</h1>
+    <a href="./index2.html">VoltarIndex2</a>
+    
+    
+</body>
+</html>

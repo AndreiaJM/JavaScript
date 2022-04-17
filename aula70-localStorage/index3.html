@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <script>
+
+        var vcorf
+        var vcort
+        var vcornome
+
+        if ((Storage) != "undefined") {
+
+
+        } else {
+            document.write("Sem suporte para webStorage")
+        }
+
+        function definecor(op, cor) {
+            if (op == 1) {
+                document.body.style.backgroundColor = cor
+                vcorf = cor
+            } else {
+                document.body.style.color = cor
+                vcort = cor
+            }
+        }
+
+        function gravar() {
+            vcornome = document.getElementById("fnome").value
+            localStorage.corf = vcorf
+            localStorage.cort = vcorf
+            localStorage.nome = vcornome
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <p>LocalStorage - Curso de JavaScript</p>
+
+    <form name="dados">
+
+        <label>Nome:</label><br>
+        <input type="text" name="fnome" id="fnome" size="20"><br><br>
+
+        <label for="">Cor fundo: </label><br>
+        <input type="radio" name="fcorF" onclick="definecor(1,'#f00')">vermelho<br>
+        <input type="radio" name="fcorF" onclick="definecor(1,'#0f0')">verde<br>
+        <input type="radio" name="fcorF" onclick="definecor(1,'#00f')">azul<br>
+        <input type="radio" name="fcorF" onclick="definecor(1,'#000')">preto<br>
+        <input type="radio" name="fcorF" onclick="definecor(1,'#fff')">branco<br>
+
+        <label for="">Cor texto:</label><br>
+        <input type="radio" name="fcorT" onclick="definecor(2,'#000')">preto<br>
+        <input type="radio" name="fcorT" onclick="definecor(2,'#fff')">branco<br>
+        <br>
+        <input type="button" value="gravar" onclick="gravar()"><br>
+
+
+    </form>
+
+
+
+</body>
+
+</html>

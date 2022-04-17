@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <style>
+        body{
+            background-color: #f00;
+            color: #fff;
+        }
+        a{
+            color: #fff;
+        }
+    </style>
+    <script>
+        /*Location e uma extensão do windows que serve para a manipulação da url
+        
+        Possue informações da url ou seja pode ser resgatado informações da url como tambem seta-las
+
+        # = hash/cerquilha = compões a url com as informações passadas de uma pagina para outra
+        
+        */
+
+        var aux = location.hash; /*variavel guarda o valor da hash inserida no href na pagina*/
+
+        document.write(aux) //impressão da hash
+        document.write("<hr>")
+
+        var dados = aux.split("#")
+        document.write(dados[1]) //array não tem nada na posição 0
+        document.write("<hr>")
+        var v1=dados[1]
+        var v2=dados[2]
+        document.write(v1+"<br>")
+        document.write(v2)
+        document.write("<hr>")
+        
+        var h = location.host
+        document.write(h) //Não aparece nada caso esteja offline, caso online aparece o endereço do hostname da url
+
+        document.write("<hr>")
+        var hf = location.href
+        document.write(hf) //imprime a url
+        document.write("<hr>")
+
+        //var hf2 = location.href="http://www.github.com.br" = seta a url, a pagina é direcionada automaticamente
+
+        document.write("<hr>")
+
+        var o=location.origin
+        document.write(o) //retorna o protocolo, o hostname e numero da porta CASO ESTEJA ONLINE
+
+        document.write("<hr>")
+        var p=location.pathname
+        document.write(p) //retorna o caminho apos o protocolo e hostname CASO ESTEJA ONLINE
+
+        document.write("<hr>")
+        var por=location.port
+        document.write(por) //retorna o numero da porta CASO ESTEJA ONLINE
+
+        document.write("<hr>")
+        var pl=location.protocol
+        document.write(pl) //retorna o protocolo da url CASO ESTEJA ONLINE
+
+    
+    </script>
+</head>
+<body>
+
+    <h1>P2 - p2.html</h1>
+    <a href="./index.html">VoltarIndex1</a>
+    
+    
+</body>
+</html>

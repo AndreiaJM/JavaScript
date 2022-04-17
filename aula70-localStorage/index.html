@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <style></style>
+    <script>
+
+        //verificando se o browser tem o suporte para Storage
+        if(typeof(Storage)!="undefined"){
+        //setItem()=cria a chave através de chave,valor
+        localStorage.setItem("canal","cfbcursos")
+
+        //removeItem() = remove do localStorage com a chave
+        //localStorage.removeItem("canal")
+
+        //getItem() = obtem do localStorage com a chave o VALOR
+        //var vcanal = localStorage.getItem("canal")
+        var vcanal = localStorage.canal //outra meneira de pegar a chave
+        document.write(vcanal)
+    }else{
+        document.write("sem suporte para web-storage")
+    }
+    </script>
+</head>
+<body>
+    <!--O local objeto storage cria um local de armazenamento do browser no formato chave valor, pode ser armazenado quantos dados quiser, o armazenamento é na maquina do usuario e mesmo finalizando a sessão continua armazenado, e pode ser apagado no localstorage do browser
+    
+    -->
+    
+</body>
+</html>
